@@ -1,19 +1,24 @@
 package com.driver;
 
 import org.springframework.stereotype.Repository;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 
 @Repository
 public class StudentRepository {
+    // Hashmap for student
     public HashMap<String,Student> studentDb = new HashMap<>();
+
+    // hashmap for teacher
     public HashMap<String,Teacher> teacherDb = new HashMap<>();
+
+    // Hashmap for student and teacher connect
     public HashMap<String, List<String>> studentTeacherDb = new HashMap<>();
+
+
+
+
     public void addStudentFromDb(Student student){
-        studentDb.put(student.getName(),student);
+        studentDb.put(student.getName() , student);
     }
 
     public void addTeacherFromDb(Teacher teacher){
@@ -31,20 +36,14 @@ public class StudentRepository {
         }
     }
 
-    public Student getStudentByNameFromDb(String name){
-        if(studentDb.containsKey(name)){
-            return studentDb.get(name);
-        }else{
-            return null;
-        }
+    public Student getStudentByNameFromDb(String studentName){
+        return studentDb.getOrDefault(studentName, null);
+
     }
 
-    public Teacher getTeacherByNameFromDb(String name){
-        if(teacherDb.containsKey(name)) {
-            return teacherDb.get(name);
-        }else{
-            return null;
-        }
+    public Teacher getTeacherByNameFromDb(String teacherName){
+        return teacherDb.getOrDefault(teacherName, null);
+
     }
 
     public List<String> getStudentsByTeacherNameFromDb(String teacher){

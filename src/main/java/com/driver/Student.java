@@ -7,7 +7,10 @@ public class Student {
     private double averageScore;
 
     public Student(){
-
+        // setting the parametees
+//        this.age= getAge();
+//        this.name = getName();
+//        this.averageScore = getAverageScore();
     }
 
     public Student(String name, int age, double averageScore) {

@@ -9,8 +9,10 @@ public class Teacher {
     private int age;
 
     public Teacher() {
-
-
+//        // setting thee parameters
+//            this.name = getName();
+//            this.age = getAge();
+//            this.numberOfStudents = getNumberOfStudents();
     }
     public Teacher(String name, int numberOfStudents, int age) {
         this.name = name;
